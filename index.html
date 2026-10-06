@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأرشيف الخاص | نسرين طافش</title>
+    <style>
+        :root {
+            --bg-color: #0f0f11;
+            --card-bg: #1c1c1f;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --accent: #d946ef;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid #27272a;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        /* شبكة عرض الوسائط */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .media-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* تنسيق الصور والفيديوهات داخل البطاقة */
+        .media-card img, 
+        .media-card video, 
+        .media-card iframe {
+            width: 100%;
+            height: 350px; /* توحيد الارتفاع لترتيب الشبكة */
+            object-fit: cover;
+            border: none;
+            display: block;
+        }
+
+        .media-info {
+            padding: 15px;
+        }
+
+        .media-title {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .media-date {
+            margin: 5px 0 0 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>الأرشيف الخاص</h1>
+        <p class="subtitle">المعرض السري للصور والفيديوهات</p>
+    </header>
+
+    <main class="gallery">
+        
+        <!-- مثال 1: صورة عادية مرفوعة على المستودع -->
+        <div class="media-card">
+            <!-- ضع مسار الصورة الفعلي هنا -->
+            <img src="assets/images/photo1.jpg" alt="صورة من جلسة تصوير" loading="lazy">
+            <div class="media-info">
+                <h3 class="media-title">جلسة تصوير دبي</h3>
+                <p class="media-date">2023</p>
+            </div>
+        </div>
+
+        <!-- مثال 2: فيديو قصير مرفوع على المستودع (أقل من 25 ميغابايت) -->
+        <div class="media-card">
+            <!-- ضع مسار الفيديو الفعلي هنا -->
+            <video controls preload="none" poster="assets/images/video_cover.jpg">
+                <source src="assets/videos/short_clip.mp4" type="video/mp4">
+            </video>
+            <div class="media-info">
+                <h3 class="media-title">كواليس مسلسل</h3>
+                <p class="media-date">2022</p>
+            </div>
+        </div>
+
+        <!-- مثال 3: فيديو طويل مضمن (Embedded) لتجاوز قيود المساحة -->
+        <div class="media-card">
+            <!-- يمكنك تضمين فيديوهات يوتيوب أو غيرها هنا للفيديوهات الثقيلة -->
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <div class="media-info">
+                <h3 class="media-title">لقاء تلفزيوني كامل</h3>
+                <p class="media-date">2024</p>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
